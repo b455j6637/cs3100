@@ -1,0 +1,9 @@
+ls -al > op							PASS
+ls -al | grep test						PASS
+ls -al | grep test > op						PASS
+ls -al | grep test | sort | cat > op				FAIL
+cat < test.txt							PASS
+more < test.txt | wc						PASS
+more test.txt | sort | grep xyz | grep abc | wc			PASS
+more < test.txt | sort | grep xyz | grep abc | wc		PASS
+more < test.txt | sort | grep xyz | grep abc | wc > op		PASS
